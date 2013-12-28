@@ -41,6 +41,8 @@ public class TankMovementControls : MonoBehaviour {
 		// The angle between our velocity vector and forward direction in world coordinates. Used for checking if we are 
 		// moving forward or in reverse. When the tank is still the angle is 90, we substract it just for clarity.
 		float velocityAngle = Vector3.Angle(mRigidBody.velocity, fwd) - 90;
+		if(velocityAngle < 0)
+			hInput *= -1;		// moving backward
 
 		// Apply force if the tank is grounded and not moving at maximum speed. Set neutral to false.
 		if( vInput != 0 && mGrounder.IsGrounded ){
