@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class GunRotation : MonoBehaviour {
-	public float mMaxDegreesPerSecond = 10f;
+	public float mMaxDegreesPerSecond = 15f;
 	public float mClampMaxX = 7f;	// (-180, 180)
 	public float mClampMinX = -25f;	// (-180, 180)
 

@@ -421,6 +421,9 @@ GameObject:
   - 4: {fileID: 661882708}
   - 114: {fileID: 661882707}
   - 154: {fileID: 661882706}
+  - 114: {fileID: 661882709}
+  - 114: {fileID: 661882711}
+  - 114: {fileID: 661882710}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Terrain
@@ -475,6 +478,41 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &661882709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 661882705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6905814ec68d744aa6b5cc807a0047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mCraterTexture: {fileID: 2800000, guid: 72c26139ab8d91c44a5464cfd82a76dc, type: 3}
+--- !u!114 &661882710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 661882705}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f6d421adf2ff24197a5eeaf893ab9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &661882711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 661882705}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0042950ed27a0478511dc9c0660839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cratertex: {fileID: 2800000, guid: 72c26139ab8d91c44a5464cfd82a76dc, type: 3}
 --- !u!1 &661939875
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,7 +811,7 @@ GameObject:
   - 114: {fileID: 1759018190}
   m_Layer: 0
   m_Name: T-90
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -880,6 +918,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100026, guid: 7b75ccfef5c8ea84fbeba6c1912d21cb, type: 2}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024, guid: 7b75ccfef5c8ea84fbeba6c1912d21cb, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b75ccfef5c8ea84fbeba6c1912d21cb, type: 2}
   m_RootGameObject: {fileID: 1759018185}
@@ -899,7 +945,7 @@ GameObject:
   - 81: {fileID: 1981698279}
   m_Layer: 0
   m_Name: camera_3rdp_follow
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
