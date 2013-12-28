@@ -19,7 +19,7 @@ RenderSettings:
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientLight: {r: .200000003, g: .200000003, b: .200000003, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 80cab7a06c83d1f479ac4387fc07cd74, type: 2}
   m_HaloStrength: .5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -131,11 +131,189 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 86940137}
-  m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381661, w: .875426114}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: .72561568, y: -.484420955, z: -.0355656184, w: .487394542}
+  m_LocalPosition: {x: 0, y: 150, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &90391539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: b18cadd60c0d1b04aaad31e7200914d8, type: 2}
+  m_PrefabInternal: {fileID: 1172959977}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 90391540}
+  - 114: {fileID: 90391541}
+  - 114: {fileID: 90391542}
+  - 114: {fileID: 90391543}
+  - 114: {fileID: 90391544}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &90391540
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: b18cadd60c0d1b04aaad31e7200914d8, type: 2}
+  m_PrefabInternal: {fileID: 1172959977}
+  m_GameObject: {fileID: 90391539}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1757256508}
+--- !u!114 &90391541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: b18cadd60c0d1b04aaad31e7200914d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1172959977}
+  m_GameObject: {fileID: 90391539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4007f1233a9b74fa9be42583fafba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 4
+  color: {r: 1, g: .423000008, b: 0, a: .5}
+  explodeOnStart: 1
+  duration: .600000024
+  detail: 2
+  upwardsBias: 100
+  destroyTime: 4
+  useWorldSpace: 0
+  direction: {x: 0, y: 0, z: 0}
+  fireballAMaterial: {fileID: 0}
+  fireballBMaterial: {fileID: 0}
+  smokeAMaterial: {fileID: 0}
+  smokeBMaterial: {fileID: 0}
+  shockwaveMaterial: {fileID: 0}
+  sparksMaterial: {fileID: 0}
+  glowMaterial: {fileID: 0}
+  heatwaveMaterial: {fileID: 0}
+  autoCreateFireball: 0
+  autoCreateSparks: 0
+  autoCreateShockwave: 0
+  autoCreateSmoke: 0
+  autoCreateGlow: 0
+  autoCreateLight: 0
+  autoCreateForce: 0
+  autoCreateHeatwave: 0
+--- !u!114 &90391542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: b18cadd60c0d1b04aaad31e7200914d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1172959977}
+  m_GameObject: {fileID: 90391539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edba693a4a231da4e9434948a5dec7ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  on: 1
+  detonatorControlled: 1
+  startSize: 1
+  size: 1
+  explodeDelayMin: 0
+  explodeDelayMax: 0
+  startDuration: 2
+  duration: 2
+  timeScale: 1
+  startDetail: 1
+  detail: 2
+  startColor: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 1, g: .423000008, b: 0, a: .5}
+  startLocalPosition: {x: 0, y: 0, z: 0}
+  localPosition: {x: 0, y: 0, z: 0}
+  startForce: {x: 0, y: 0, z: 0}
+  force: {x: 0, y: 0, z: 0}
+  startVelocity: {x: 0, y: 0, z: 0}
+  velocity: {x: 5, y: 10, z: 5}
+  detailThreshold: 0
+  fireballAMaterial: {fileID: 0}
+  fireballBMaterial: {fileID: 0}
+  fireShadowMaterial: {fileID: 0}
+  drawFireballA: 1
+  drawFireballB: 1
+  drawFireShadow: 0
+--- !u!114 &90391543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: b18cadd60c0d1b04aaad31e7200914d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1172959977}
+  m_GameObject: {fileID: 90391539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b0ca7171ed55c4eaaf9aba39d05e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  on: 1
+  detonatorControlled: 1
+  startSize: 1
+  size: 1
+  explodeDelayMin: 0
+  explodeDelayMax: 0
+  startDuration: 2
+  duration: 2
+  timeScale: 1
+  startDetail: 1
+  detail: 1
+  startColor: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  startLocalPosition: {x: 0, y: 0, z: 0}
+  localPosition: {x: 0, y: 0, z: 0}
+  startForce: {x: 0, y: 0, z: 0}
+  force: {x: 0, y: 0, z: 0}
+  startVelocity: {x: 0, y: 0, z: 0}
+  velocity: {x: 0, y: 0, z: 0}
+  detailThreshold: 0
+  nearSounds:
+  - {fileID: 8300000, guid: 395ebd3d6fca1ec40a6b3c7415c1edb7, type: 3}
+  farSounds:
+  - {fileID: 8300000, guid: 395ebd3d6fca1ec40a6b3c7415c1edb7, type: 3}
+  distanceThreshold: 50
+  minVolume: .400000006
+  maxVolume: 1
+  rolloffFactor: .5
+--- !u!114 &90391544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: b18cadd60c0d1b04aaad31e7200914d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1172959977}
+  m_GameObject: {fileID: 90391539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ccfc2137d7c684f966ad07b4dc0d4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  on: 1
+  detonatorControlled: 1
+  startSize: 1
+  size: 1
+  explodeDelayMin: 0
+  explodeDelayMax: 0
+  startDuration: 2
+  duration: 1
+  timeScale: 1
+  startDetail: 1
+  detail: 1
+  startColor: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
+  startLocalPosition: {x: 0, y: 0, z: 0}
+  localPosition: {x: 0, y: 0, z: 0}
+  startForce: {x: 0, y: 0, z: 0}
+  force: {x: 0, y: 0, z: 0}
+  startVelocity: {x: 0, y: 0, z: 0}
+  velocity: {x: 0, y: 0, z: 0}
+  detailThreshold: 0
+  glowMaterial: {fileID: 0}
 --- !u!1 &125260379
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,6 +902,46 @@ Transform:
   - {fileID: 467781688}
   - {fileID: 150948892}
   m_Father: {fileID: 1343914964}
+--- !u!1001 &1172959977
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400002, guid: b18cadd60c0d1b04aaad31e7200914d8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b18cadd60c0d1b04aaad31e7200914d8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b18cadd60c0d1b04aaad31e7200914d8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b18cadd60c0d1b04aaad31e7200914d8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b18cadd60c0d1b04aaad31e7200914d8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b18cadd60c0d1b04aaad31e7200914d8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b18cadd60c0d1b04aaad31e7200914d8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b18cadd60c0d1b04aaad31e7200914d8, type: 2}
+  m_RootGameObject: {fileID: 1757256507}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1341750420
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,7 +999,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8048c95478294764ebeeaeb080c6f777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mProjectile: {fileID: 100000, guid: 7b1d63a87476b5a4091a120aee5d2432, type: 2}
+  m_Projectile: {fileID: 100000, guid: 7b1d63a87476b5a4091a120aee5d2432, type: 2}
+  m_MuzzleFlash: {fileID: 100002, guid: b18cadd60c0d1b04aaad31e7200914d8, type: 2}
   mInitialForce: 10000
 --- !u!1 &1343914963
 GameObject:
@@ -853,6 +1072,33 @@ Transform:
   m_Children:
   - {fileID: 602556410}
   m_Father: {fileID: 1341750421}
+--- !u!1 &1757256507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: b18cadd60c0d1b04aaad31e7200914d8, type: 2}
+  m_PrefabInternal: {fileID: 1172959977}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1757256508}
+  m_Layer: 0
+  m_Name: MuzzleFlash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1757256508
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: b18cadd60c0d1b04aaad31e7200914d8, type: 2}
+  m_PrefabInternal: {fileID: 1172959977}
+  m_GameObject: {fileID: 1757256507}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 90391540}
+  m_Father: {fileID: 0}
 --- !u!1 &1759018185
 GameObject:
   m_ObjectHideFlags: 0
