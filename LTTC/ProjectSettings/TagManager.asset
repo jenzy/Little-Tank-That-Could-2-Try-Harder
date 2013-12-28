@@ -5,7 +5,8 @@ TagManager:
   tags:
   - Terrain
   - Projectile
-  - Projectile Start
+  - ProjectileStart
+  - AimCamera
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

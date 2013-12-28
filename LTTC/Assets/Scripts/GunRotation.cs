@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class GunRotation : MonoBehaviour {
-	public float mMaxDegreesPerSecond = 15f;
-	public float mClampMaxX = 7f;	// (-180, 180)
-	public float mClampMinX = -25f;	// (-180, 180)
+	public float m_MaxDegreesPerSecond = 15f;
+	public float m_ClampMaxX = 7f;	// (-180, 180)
+	public float m_ClampMinX = -25f;	// (-180, 180)
 
 	private Transform mTransform;
 	
@@ -19,11 +19,11 @@ public class GunRotation : MonoBehaviour {
 		float desiredX = currentRotation.x - dVert;
 		
 		if(desiredX > 180) desiredX = desiredX - 360;	// convert (0, 360) to (-180, 180)
-		desiredX = Mathf.Clamp(desiredX, mClampMinX, mClampMaxX);
+		desiredX = Mathf.Clamp(desiredX, m_ClampMinX, m_ClampMaxX);
 		float dx = desiredX - currentRotation.x;
 
 		Quaternion qTo = mTransform.localRotation * Quaternion.Euler(dx, 0, 0);
-		mTransform.localRotation = Quaternion.RotateTowards( mTransform.localRotation, qTo, mMaxDegreesPerSecond * Time.deltaTime);
+		mTransform.localRotation = Quaternion.RotateTowards( mTransform.localRotation, qTo, m_MaxDegreesPerSecond * Time.deltaTime);
 
 		/*
 		 * SAFE

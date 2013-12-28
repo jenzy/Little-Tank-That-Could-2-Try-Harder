@@ -2,23 +2,22 @@
 using System.Collections;
 
 public class ProjectileCollision : MonoBehaviour {
-	public Transform mExplosion;
+	public Transform m_Explosion;
 
-	private Transform mTransform;
-	private CraterMaker mTerrain;
+	private Transform m_Transform;
+	private CraterMaker m_Terrain;
 
 	void Start () {
-		mTransform = transform;
-		mTerrain = GameObject.FindGameObjectWithTag(Tags.Terrain).GetComponent<CraterMaker>();
+		m_Transform = transform;
+		m_Terrain = GameObject.FindGameObjectWithTag(Tags.TERRAIN).GetComponent<CraterMaker>();
 	}
 
 
 	void OnTriggerEnter(Collider other) {
-		Vector3 impactLocation = mTransform.position;
+		Vector3 impactLocation = m_Transform.position;
 
-		Instantiate(mExplosion, impactLocation, Quaternion.identity);
-		mTerrain.MakeCrater(impactLocation);
-		//mTerrain.AddCrater(impactLocation);
+		Instantiate(m_Explosion, impactLocation, Quaternion.identity);
+		m_Terrain.MakeCrater(impactLocation);
 
 		Destroy(this.gameObject);
 	}

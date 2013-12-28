@@ -2,66 +2,51 @@
 using System.Collections;
 
 public class CraterMaker : MonoBehaviour {
-	public Texture2D mCraterTexture;
+	public Texture2D m_CraterTexture;
 
-	private TerrainData mTerrainData;
-	private float[,] mSavedTerrainData;
-	private Color[] mCraterData;
+	private TerrainData m_TerrainData;
+	private float[,] m_SavedTerrainData;
+	private Color[] m_CraterData;
 
-	private int mHeightmapWidth;
-	private int mHeightmapHeight;
-
-	private Queue queue;
+	private int m_HeightmapWidth;
+	private int m_HeightmapHeight;
 
 	void Start () {
-		mTerrainData = Terrain.activeTerrain.terrainData;
-		mHeightmapWidth = mTerrainData.heightmapWidth;
-		mHeightmapHeight = mTerrainData.heightmapHeight;
-		mSavedTerrainData = mTerrainData.GetHeights(0, 0, mHeightmapWidth, mHeightmapHeight);
-		mCraterData = mCraterTexture.GetPixels();
-		queue = new Queue();
+		m_TerrainData = Terrain.activeTerrain.terrainData;
+		m_HeightmapWidth = m_TerrainData.heightmapWidth;
+		m_HeightmapHeight = m_TerrainData.heightmapHeight;
+		m_SavedTerrainData = m_TerrainData.GetHeights(0, 0, m_HeightmapWidth, m_HeightmapHeight);
+		m_CraterData = m_CraterTexture.GetPixels();
 	}
 	
 	void OnApplicationQuit () {
-		mTerrainData.SetHeights(0, 0, mSavedTerrainData);
+		m_TerrainData.SetHeights(0, 0, m_SavedTerrainData);
 	}
-
-	public void AddCrater( Vector3 impact ){
-		queue.Enqueue(impact);
-	}
-
-	void Update(){
-		while(queue.Count > 0){
-			Vector3 impact = (Vector3)queue.Dequeue();
-			MakeCrater(impact);
-		}
-	}
-	
 
 	public void MakeCrater( Vector3 impact ){
 		impact -= transform.position;
 
-		int x = (int)Mathf.Lerp(0, mHeightmapWidth, Mathf.InverseLerp(0, mTerrainData.size.x, impact.x));
-		int z = (int)Mathf.Lerp(0, mHeightmapHeight, Mathf.InverseLerp(0, mTerrainData.size.z, impact.z));
+		int x = (int)Mathf.Lerp(0, m_HeightmapWidth, Mathf.InverseLerp(0, m_TerrainData.size.x, impact.x));
+		int z = (int)Mathf.Lerp(0, m_HeightmapHeight, Mathf.InverseLerp(0, m_TerrainData.size.z, impact.z));
 
 
 		//Debug.Log(impact + " " + x + " " + z);
 
-		x = Mathf.Clamp(x, mCraterTexture.width/2, mHeightmapWidth-mCraterTexture.width/2);
-		z = Mathf.Clamp(z, mCraterTexture.height/2, mHeightmapHeight-mCraterTexture.height/2);
+		x = Mathf.Clamp(x, m_CraterTexture.width/2, m_HeightmapWidth-m_CraterTexture.width/2);
+		z = Mathf.Clamp(z, m_CraterTexture.height/2, m_HeightmapHeight-m_CraterTexture.height/2);
 
 		//Debug.Log("c# " + x + " " + z);
 		
 
-		float[,] areaT = mTerrainData.GetHeights((int)(x-mCraterTexture.width/2), (int)(z-mCraterTexture.height/2), mCraterTexture.width, mCraterTexture.height);
+		float[,] areaT = m_TerrainData.GetHeights((int)(x-m_CraterTexture.width/2), (int)(z-m_CraterTexture.height/2), m_CraterTexture.width, m_CraterTexture.height);
 
-		for (int i = 0; i < mCraterTexture.height; i++) {
-			for (int j = 0; j < mCraterTexture.width; j++) {
-				areaT[i,j] = (float)(areaT[i,j] - mCraterData[i*mCraterTexture.width+j].a * 0.01);
+		for (int i = 0; i < m_CraterTexture.height; i++) {
+			for (int j = 0; j < m_CraterTexture.width; j++) {
+				areaT[i,j] = (float)(areaT[i,j] - m_CraterData[i*m_CraterTexture.width+j].a * 0.01);
 				//areaT[i,j] = 200;
 			}	
 		}
 		
-		mTerrainData.SetHeights((int)(x-mCraterTexture.width/2), (int)(z-mCraterTexture.height/2), areaT);
+		m_TerrainData.SetHeights((int)(x-m_CraterTexture.width/2), (int)(z-m_CraterTexture.height/2), areaT);
 	}
 }

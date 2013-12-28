@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class GunFire : MonoBehaviour {
@@ -10,8 +10,8 @@ public class GunFire : MonoBehaviour {
 	}
 	
 	void Update () {
-		if( Input.GetButtonUp(In.BUTTON_FIRE_1) ){
-			Vector3 startPosition = GameObject.FindGameObjectWithTag(Tags.ProjectileStart).transform.position;
+		if( Input.GetButtonUp(In.BUTTON_FIRE) ){
+			Vector3 startPosition = GameObject.FindGameObjectWithTag(Tags.PROJECTILE_START).transform.position;
 			GameObject projectile = Instantiate(mProjectile, startPosition, Quaternion.identity) as GameObject;
 			Vector3 force = transform.rotation *  Vector3.forward * mInitialForce;
 			projectile.rigidbody.AddForce(force);
