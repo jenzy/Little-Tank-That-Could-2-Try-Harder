@@ -13,6 +13,15 @@ public class CameraRotation : MonoBehaviour {
 	
 	void LateUpdate(){
 		float dHor = Input.GetAxis(In.AXIS_CAMERA_X);
+		
+		Vector3 currentRotation = mTransform.eulerAngles;
+		float desiredY = currentRotation.y + dHor;
+		float dy = desiredY - currentRotation.y;
+		
+		Quaternion rotation = Quaternion.Euler(0, dy, 0);
+		mTransform.rotation *= rotation;
+
+		/*float dHor = Input.GetAxis(In.AXIS_CAMERA_X);
 		//float dVert = Input.GetAxis(In.AXIS_CAMERA_Y);
 
 		Vector3 currentRotation = mTransform.eulerAngles;
@@ -24,7 +33,7 @@ public class CameraRotation : MonoBehaviour {
 
 		Quaternion rotation = Quaternion.Euler(0, desiredY, 0);
 		mTransform.rotation = rotation;
-
+		*/
 		/* SAFE
 		 * float dHor = Input.GetAxis(In.AXIS_CAMERA_X);
 		 * Quaternion rotation = Quaternion.Euler(0, mTransform.rotation.eulerAngles.y + dHor, 0);
