@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.57851219, y: 125.717628, z: -19.4284058}
+  m_LocalPosition: {x: -15.175354, y: 119.998444, z: -25.8197021}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -161,14 +161,13 @@ MonoBehaviour:
   startVelocity: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   detailThreshold: 0
-  nearSounds:
-  - {fileID: 8300000, guid: 395ebd3d6fca1ec40a6b3c7415c1edb7, type: 3}
+  nearSounds: []
   farSounds:
-  - {fileID: 8300000, guid: 395ebd3d6fca1ec40a6b3c7415c1edb7, type: 3}
-  distanceThreshold: 50
+  - {fileID: 8300000, guid: 8ade9ba356475bd44b5f3fa65bd4878d, type: 3}
+  distanceThreshold: 0
   minVolume: .400000006
-  maxVolume: 1
-  rolloffFactor: .5
+  maxVolume: .600000024
+  rolloffFactor: .400000006
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

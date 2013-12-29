@@ -24,6 +24,10 @@ public class ProjectileCollision : MonoBehaviour {
 				Instantiate(m_Explosion, impactLocation, Quaternion.identity);
 				m_Terrain.MakeCrater(impactLocation);
 			} 
+			else if(other.CompareTag(Tags.DESTRUCTIBLE)){
+				Destroyer dest = other.GetComponent<Destroyer>();
+				dest.Destroy();
+			}
 			else {
 				Destroy(other);
 			}

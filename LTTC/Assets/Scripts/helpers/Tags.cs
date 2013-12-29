@@ -9,4 +9,5 @@ public class Tags : MonoBehaviour {
 	public const string CAMERA_MAIN = "MainCamera";
 	public const string TURRET_GROUP = "TurretGroup";
 	public const string PLAYER = "Player";
+	public const string DESTRUCTIBLE = "Destructible";
 }

@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Destroy : MonoBehaviour {
+public class Destroyer : MonoBehaviour {
 	public Transform m_Explosion;
 
-	void OnDestroy(){
+	public void Destroy(){
 		Debug.Log(this.name + " is being destroyed");
 		Instantiate(m_Explosion, this.transform.position, Quaternion.identity);
+		Destroy(this.gameObject, 0.1f);
 	}
+
 }

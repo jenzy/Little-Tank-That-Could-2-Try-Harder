@@ -708,6 +708,7 @@ GameObject:
   - 4: {fileID: 664462660}
   - 33: {fileID: 664462662}
   - 23: {fileID: 664462661}
+  - 64: {fileID: 664462663}
   m_Layer: 0
   m_Name: pac_3_laun
   m_TagString: Untagged
@@ -755,6 +756,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1534162455}
   m_GameObject: {fileID: 664462659}
+  m_Mesh: {fileID: 4300002, guid: eff3ae9824f2f3c44917902fb851c7e6, type: 3}
+--- !u!64 &664462663
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 664462659}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: eff3ae9824f2f3c44917902fb851c7e6, type: 3}
 --- !u!1 &711387352
 GameObject:
@@ -1042,7 +1056,7 @@ Transform:
   m_PrefabInternal: {fileID: 1534162455}
   m_GameObject: {fileID: 1316515041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -141.532257, y: 117.40535, z: -121.526512}
+  m_LocalPosition: {x: -52.299881, y: 117.40535, z: -67.1028214}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1344168500}
@@ -1087,6 +1101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c38f15d8e213e54ea871f9bc4259b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Explosion: {fileID: 400000, guid: e0a8f3202e78e8a42bdec33be319efb0, type: 2}
 --- !u!1 &1341750420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,6 +1245,7 @@ GameObject:
   - 4: {fileID: 1354033398}
   - 33: {fileID: 1354033397}
   - 23: {fileID: 1354033396}
+  - 64: {fileID: 1354033399}
   m_Layer: 0
   m_Name: window
   m_TagString: Untagged
@@ -1278,6 +1294,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1344168500}
+--- !u!64 &1354033399
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1354033395}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 1
+  m_Mesh: {fileID: 4300004, guid: eff3ae9824f2f3c44917902fb851c7e6, type: 3}
 --- !u!1 &1506106123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,7 +1343,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: f8484ac2d46de67428192e8a78570e18, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -141.532257
+      value: -52.299881
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f8484ac2d46de67428192e8a78570e18, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1322,7 +1351,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f8484ac2d46de67428192e8a78570e18, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -121.526512
+      value: -67.1028214
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f8484ac2d46de67428192e8a78570e18, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1338,6 +1367,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f8484ac2d46de67428192e8a78570e18, type: 2}
       propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: f8484ac2d46de67428192e8a78570e18, type: 2}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1636,6 +1669,7 @@ GameObject:
   - 4: {fileID: 1994200238}
   - 33: {fileID: 1994200240}
   - 23: {fileID: 1994200239}
+  - 64: {fileID: 1994200241}
   m_Layer: 0
   m_Name: pac_3_lau0
   m_TagString: Untagged
@@ -1683,6 +1717,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1534162455}
   m_GameObject: {fileID: 1994200237}
+  m_Mesh: {fileID: 4300000, guid: eff3ae9824f2f3c44917902fb851c7e6, type: 3}
+--- !u!64 &1994200241
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1994200237}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: eff3ae9824f2f3c44917902fb851c7e6, type: 3}
 --- !u!1 &2029224390
 GameObject:
