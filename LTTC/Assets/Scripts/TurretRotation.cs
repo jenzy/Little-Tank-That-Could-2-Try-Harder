@@ -2,17 +2,19 @@
 using System.Collections;
 
 public class TurretRotation : MonoBehaviour {
-	public GameObject mTarget;	// Turret follows the rotation of this object
 	public float mMaxDegreesPerSecond = 30f;
 
 	private Transform mTransform;
+	private CameraSwitcher m_Camera;
 
 	void Start () {
 		mTransform = transform;
+		m_Camera = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLER).GetComponent<CameraSwitcher>();
 	}
 
 	void Update () {
-		float dy = mTarget.transform.localEulerAngles.y - mTransform.localEulerAngles.y;
+		Transform target = m_Camera.ActiveCameraGroup;
+		float dy = target.localEulerAngles.y - mTransform.localEulerAngles.y;
 		Quaternion qTo = mTransform.localRotation * Quaternion.Euler(0, dy, 0);
 		mTransform.localRotation = Quaternion.RotateTowards( mTransform.localRotation, qTo, mMaxDegreesPerSecond * Time.deltaTime);
 	}

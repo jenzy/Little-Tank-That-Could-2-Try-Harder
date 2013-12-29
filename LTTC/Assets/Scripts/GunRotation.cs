@@ -5,6 +5,7 @@ public class GunRotation : MonoBehaviour {
 	public float m_MaxDegreesPerSecond = 15f;
 	public float m_ClampMaxX = 7f;	// (-180, 180)
 	public float m_ClampMinX = -25f;	// (-180, 180)
+	public float sensitivity = 0.5f;
 
 	private Transform mTransform;
 	
@@ -14,7 +15,7 @@ public class GunRotation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float dVert = Input.GetAxis(In.AXIS_CAMERA_Y);
+		float dVert = Input.GetAxis(In.AXIS_CAMERA_Y) * sensitivity;
 		Vector3 currentRotation = mTransform.localEulerAngles;
 		float desiredX = currentRotation.x - dVert;
 		

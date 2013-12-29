@@ -9,6 +9,13 @@ public class CameraSwitcher : MonoBehaviour {
 
 	private int m_IndexActiveCamera;
 
+	public GameObject ActiveCamera {
+		get { return m_Cameras[m_IndexActiveCamera]; }
+	}
+	public Transform ActiveCameraGroup {
+		get { return ActiveCamera.transform.parent.parent; }
+	}
+
 	void Start () {
 		m_IndexActiveCamera = m_IndexMainCamera;
 	}
@@ -32,6 +39,10 @@ public class CameraSwitcher : MonoBehaviour {
 	}
 
 	private void switchToCamera( int index ){
+		if( index == m_IndexAimCamera ){
+			Quaternion q = GameObject.FindGameObjectWithTag(Tags.TURRET_GROUP).transform.localRotation;
+			m_Cameras[m_IndexAimCamera].transform.parent.parent.localRotation = q;
+		}
 		for (int i = 0; i < m_Cameras.Length; i++) {
 			if(index==i){
 				m_Cameras[i].camera.enabled = true;
