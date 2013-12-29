@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CraterMaker : MonoBehaviour {
+public class TerrainCraterMaker : MonoBehaviour {
 	public Texture2D m_CraterTexture;
 
 	private TerrainData m_TerrainData;
@@ -11,7 +11,7 @@ public class CraterMaker : MonoBehaviour {
 	private int m_HeightmapWidth;
 	private int m_HeightmapHeight;
 
-	private TextureChanger m_texChanger;
+	private TerrainTextureChanger m_texChanger;
 
 	void Start () {
 		m_TerrainData = Terrain.activeTerrain.terrainData;
@@ -20,23 +20,24 @@ public class CraterMaker : MonoBehaviour {
 		m_SavedTerrainData = m_TerrainData.GetHeights(0, 0, m_HeightmapWidth, m_HeightmapHeight);
 		m_CraterData = m_CraterTexture.GetPixels();
 
-		m_texChanger = Terrain.activeTerrain.GetComponent<TextureChanger>();
+		m_texChanger = Terrain.activeTerrain.GetComponent<TerrainTextureChanger>();
 	}
 	
 	void OnApplicationQuit () {
 		m_TerrainData.SetHeights(0, 0, m_SavedTerrainData);
 	}
 
-	public void MakeCrater( Vector3 impact ){
-		m_texChanger.MakeCrater( impact );
-
-		impact -= transform.position;
+	public void MakeCrater( Vector3 impactWorldCoordinates ){
+	Vector3 impact = impactWorldCoordinates - Terrain.activeTerrain.transform.position;
 
 		int x = (int)Mathf.Lerp(0, m_HeightmapWidth, Mathf.InverseLerp(0, m_TerrainData.size.x, impact.x));
 		int z = (int)Mathf.Lerp(0, m_HeightmapHeight, Mathf.InverseLerp(0, m_TerrainData.size.z, impact.z));
 
 		x = Mathf.Clamp(x, m_CraterTexture.width/2, m_HeightmapWidth-m_CraterTexture.width/2);
 		z = Mathf.Clamp(z, m_CraterTexture.height/2, m_HeightmapHeight-m_CraterTexture.height/2);
+
+		m_texChanger.MakeCrater( x, z );
+		
 
 		float[,] areaT = m_TerrainData.GetHeights((int)(x-m_CraterTexture.width/2), (int)(z-m_CraterTexture.height/2), m_CraterTexture.width, m_CraterTexture.height);
 

@@ -1,15 +1,15 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ProjectileCollision : MonoBehaviour {
 	public Transform m_Explosion;
 
 	private Transform m_Transform;
-	private CraterMaker m_Terrain;
+	private TerrainCraterMaker m_Terrain;
 
 	void Start () {
 		m_Transform = transform;
-		m_Terrain = GameObject.FindGameObjectWithTag(Tags.TERRAIN).GetComponent<CraterMaker>();
+		m_Terrain = GameObject.FindGameObjectWithTag(Tags.TERRAIN).GetComponent<TerrainCraterMaker>();
 	}
 
 

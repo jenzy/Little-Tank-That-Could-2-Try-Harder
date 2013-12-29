@@ -486,10 +486,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 661882705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d6905814ec68d744aa6b5cc807a0047, type: 3}
+  m_Script: {fileID: 11500000, guid: 08118c4d96744244399638fcc1bd65d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CraterTexture: {fileID: 2800000, guid: d4edafd148319b0499123848fea04aaf, type: 3}
+  m_CraterTexture: {fileID: 2800000, guid: 980ccffc7453a864e96e91e0d5bd69f5, type: 3}
 --- !u!114 &661882710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,11 +498,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 661882705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4be89995bc4e8da4f99d2b5b9d858a02, type: 3}
+  m_Script: {fileID: 11500000, guid: 008a794c7bee91548b8f75e885349561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CraterTexture: {fileID: 2800000, guid: 72c26139ab8d91c44a5464cfd82a76dc, type: 3}
-  m_Layers: 0
+  m_CraterTexture: {fileID: 2800000, guid: 980ccffc7453a864e96e91e0d5bd69f5, type: 3}
 --- !u!1 &661939875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,6 +1161,7 @@ MonoBehaviour:
   - {fileID: 711387352}
   m_IndexMainCamera: 0
   m_IndexAimCamera: 1
+  m_ToggleAimCamera: 1
 --- !u!1 &2046494155
 GameObject:
   m_ObjectHideFlags: 0
