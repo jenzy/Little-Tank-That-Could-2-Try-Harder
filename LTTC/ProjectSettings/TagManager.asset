@@ -6,7 +6,8 @@ TagManager:
   - Terrain
   - Projectile
   - ProjectileStart
-  - AimCamera
+  - TurretGroup
+  - Destructible
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

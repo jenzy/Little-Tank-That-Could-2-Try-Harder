@@ -8,4 +8,5 @@ public class Tags : MonoBehaviour {
 	public const string GAME_CONTROLER = "GameController";
 	public const string CAMERA_MAIN = "MainCamera";
 	public const string TURRET_GROUP = "TurretGroup";
+	public const string PLAYER = "Player";
 }
