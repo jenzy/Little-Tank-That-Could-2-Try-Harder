@@ -17,6 +17,8 @@ public class GunFire : MonoBehaviour {
 	}
 	
 	void Update () {
+		TankGun.update();
+
 		if( Input.GetButtonUp(In.BUTTON_FIRE) ){
 			if(TankGun.Fire()){
 
@@ -25,7 +27,7 @@ public class GunFire : MonoBehaviour {
 				Vector3 force = transform.rotation *  Vector3.forward * mInitialForce;
 				projectile.rigidbody.AddForce(force);
 
-				m_player.rigidbody.AddForce(-40 * force);
+				m_player.rigidbody.AddForce(-20 * force);
 
 				Object o = Instantiate(m_MuzzleFlash, startPosition, transform.rotation);
 				Destroy(o, 10);
@@ -48,7 +50,7 @@ public class Gun {
 		this.reloadTime = reloadTime;
 	}
 
-	private void update(){
+	public void update(){
 		if(OneInTheChamber) return;
 		if(Ammo==0) return;
 		if(Time.time > lastFire + reloadTime){
