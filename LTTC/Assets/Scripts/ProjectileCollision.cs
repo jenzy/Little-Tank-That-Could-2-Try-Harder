@@ -29,7 +29,7 @@ public class ProjectileCollision : MonoBehaviour {
 				dest.Destroy();
 			}
 			else {
-				Destroy(other);
+				//Destroy(other);
 			}
 
 			Destroy(this.gameObject);

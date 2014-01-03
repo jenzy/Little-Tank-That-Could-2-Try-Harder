@@ -7,12 +7,12 @@ public class GunFire : MonoBehaviour {
 
 	public Gun TankGun{get; private set;}
 
-	private GameObject m_player;
+	//private GameObject m_player;
 
 	public float mInitialForce = 10000f;
 
 	void Start () {
-		m_player = GameObject.FindGameObjectWithTag(Tags.PLAYER);
+		//m_player = GameObject.FindGameObjectWithTag(Tags.PLAYER);
 		TankGun = new Gun(30, 5);
 	}
 	
@@ -27,7 +27,8 @@ public class GunFire : MonoBehaviour {
 				Vector3 force = transform.rotation *  Vector3.forward * mInitialForce;
 				projectile.rigidbody.AddForce(force);
 
-				m_player.rigidbody.AddForce(-20 * force);
+				//m_player.rigidbody.AddForce(-20 * force);
+				this.animation.Play();
 
 				Object o = Instantiate(m_MuzzleFlash, startPosition, transform.rotation);
 				Destroy(o, 10);
