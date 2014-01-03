@@ -18,6 +18,7 @@ public class CameraSwitcher : MonoBehaviour {
 
 	void Start () {
 		m_IndexActiveCamera = m_IndexMainCamera;
+		Screen.showCursor = false;
 	}
 	
 	// Update is called once per frame

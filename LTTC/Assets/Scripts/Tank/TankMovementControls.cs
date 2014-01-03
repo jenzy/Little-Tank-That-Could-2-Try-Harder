@@ -13,20 +13,26 @@ public class TankMovementControls : MonoBehaviour {
 	private float acceleration = 10; 			// The acceleration of the tank when vertical input is given.
 	private float angularAcceleration = 10;		// The angular acceleration of the tank when horizontal input is given.
 	private float maxTurnSpeed = 1;				// Maximum turning speed.
-	private float maxSpeed = 20;				// Maximum speed.
+	public float maxSpeed = 20;				// Maximum speed.
 	private float turnDrag = 10;				// Angular "drag", deceleration when tank is turning but input is not given.
 	private float frictionMultiplier = 500;		// Variable for altering the friction force
+
+	private AudioSource aIdle;
+	private AudioSource aAcc;
 
 	void Start () {
 		mTransform = transform;
 		mRigidBody = rigidbody;
 		mGrounder = mTransform.GetComponentInChildren<Grounder>();
+
+
 	}
 	
 	void Update () {
 		//Get inputs into variables.
 		var hInput = Input.GetAxis(In.AXIS_MOVEMENT_HORIZONTAL);
 		var vInput = Input.GetAxis(In.AXIS_MOVEMENT_VERTICAL);		// negative => forward
+
 
 		bool neutral = true;	// For checking if tracks have power.
 		float traction = 1f / mRigidBody.velocity.magnitude;	// The faster the tank moves, the more we want it to slide
@@ -86,5 +92,8 @@ public class TankMovementControls : MonoBehaviour {
 		}else if ( velocityAngle < 0 && !neutral && mGrounder.IsGrounded  ){
 			mRigidBody.velocity = Vector3.Slerp( mRigidBody.velocity, mTransform.forward * mRigidBody.velocity.magnitude, traction );
 		}
+
+
+
 	}
 }
