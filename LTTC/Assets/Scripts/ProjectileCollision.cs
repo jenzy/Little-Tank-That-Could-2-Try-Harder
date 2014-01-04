@@ -29,12 +29,27 @@ public class ProjectileCollision : MonoBehaviour {
 				dest.Destroy();
 			}
 			else {
-				//Destroy(other);
+				GameObject root = Tags.findParentWithTag(Tags.DESTRUCTIBLE, other.gameObject);
+				if(root != null){
+					Destroyer dest = root.GetComponent<Destroyer>();
+					dest.Destroy();
+				}
 			}
 
 			Destroy(this.gameObject);
 		}
 	}
+	/*
+	private GameObject findParentWithTag(string tagToFind, GameObject startingObject) {
+		Transform par = startingObject.transform.parent;
+		while (par != null) { 
+			if (par.CompareTag(tagToFind)) {
+				return par.gameObject as GameObject;
+			}
+			par = par.parent;
+		}
+		return null;
+	}*/
 
 	/*void OnTriggerEnter(Collider other) {
 		Debug.Log(other.tag);

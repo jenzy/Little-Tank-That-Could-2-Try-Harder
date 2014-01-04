@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.175354, y: 119.998444, z: -25.8197021}
+  m_LocalPosition: {x: -9.93286133, y: 119.673508, z: 9.91851807}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -144,7 +144,7 @@ MonoBehaviour:
   on: 1
   detonatorControlled: 1
   startSize: 1
-  size: 1
+  size: 100
   explodeDelayMin: 0
   explodeDelayMax: 0
   startDuration: 2
@@ -161,13 +161,14 @@ MonoBehaviour:
   startVelocity: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   detailThreshold: 0
-  nearSounds: []
+  nearSounds:
+  - {fileID: 8300000, guid: 8ade9ba356475bd44b5f3fa65bd4878d, type: 3}
   farSounds:
   - {fileID: 8300000, guid: 8ade9ba356475bd44b5f3fa65bd4878d, type: 3}
-  distanceThreshold: 0
-  minVolume: .400000006
-  maxVolume: .600000024
-  rolloffFactor: .400000006
+  distanceThreshold: 10
+  minVolume: 1
+  maxVolume: 1
+  rolloffFactor: 9.99999994e-09
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

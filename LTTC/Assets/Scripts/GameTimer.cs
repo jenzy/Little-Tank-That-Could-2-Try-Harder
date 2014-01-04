@@ -26,6 +26,13 @@ public class GameTimer : MonoBehaviour {
 	void Update () {
 		if(time > 0){
 			time -= Time.deltaTime;
+			if(time <= 0)
+				Invoke("OnLose", 3);
 		}
+	}
+
+	private void OnLose(){
+		EndMenu.EndState = EndMenu.EndMenuState.LOSE;
+		Application.LoadLevel(Level.END_MENU);
 	}
 }

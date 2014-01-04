@@ -10,4 +10,15 @@ public class Tags : MonoBehaviour {
 	public const string TURRET_GROUP = "TurretGroup";
 	public const string PLAYER = "Player";
 	public const string DESTRUCTIBLE = "Destructible";
+
+	public static GameObject findParentWithTag(string tagToFind, GameObject startingObject) {
+		Transform par = startingObject.transform.parent;
+		while (par != null) { 
+			if (par.CompareTag(tagToFind)) {
+				return par.gameObject as GameObject;
+			}
+			par = par.parent;
+		}
+		return null;
+	}
 }

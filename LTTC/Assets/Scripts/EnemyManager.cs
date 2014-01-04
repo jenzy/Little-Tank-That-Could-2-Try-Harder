@@ -6,12 +6,7 @@ public class EnemyManager : MonoBehaviour {
 	public GameObject m_EnemySitePrefab;
 
 	public Vector3 EnemyLocation{
-		get { 
-			//if(m_EnemySite != null)
-				return m_EnemySite.transform.position; 
-			//else 
-			//	return null;
-		}
+		get { return m_EnemySite.transform.position; }
 	}
 
 	private GameObject m_EnemySite;
@@ -36,6 +31,12 @@ public class EnemyManager : MonoBehaviour {
 		m_GoalsLeft--;
 		if(m_GoalsLeft==0){
 			Debug.Log("WIN STATE");
+			Invoke("OnWin", 3);
 		}
+	}
+
+	private void OnWin(){
+		EndMenu.EndState = EndMenu.EndMenuState.WIN;
+		Application.LoadLevel(Level.END_MENU);
 	}
 }

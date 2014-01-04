@@ -7,7 +7,6 @@ public class MainMenu : MonoBehaviour {
 
 	public GUISkin guiSkin;
 	public Texture2D LOGO;
-	public string levelToLoad = Level.LEVEL1;
 	//public string[] AboutTextLines = new string[0];
 	
 	//private string MessageDisplayOnAbout = "About \n ";
