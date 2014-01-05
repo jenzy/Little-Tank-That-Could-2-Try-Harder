@@ -18,9 +18,9 @@ public class Destroyer : MonoBehaviour {
 
 		if(m_IsGameGoal){
 			manager.GoalDestroyed();
-			craterMaker.MakeCrater(this.transform.position);
 		}
 
+		craterMaker.MakeCrater(this.transform.position);
 		Instantiate(m_Explosion, this.transform.position, Quaternion.identity);
 		Destroy(this.gameObject, 0.1f);
 	}

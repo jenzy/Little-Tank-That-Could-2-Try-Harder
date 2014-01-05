@@ -16,12 +16,31 @@ public class CameraSwitcher : MonoBehaviour {
 		get { return ActiveCamera.transform.parent.parent; }
 	}
 
+	//Zoom
+	public int m_ZoomFOV = 20;
+	public int m_NormalFOV = 60;
+	public float m_Smooth = 5f;
+	private bool m_IsZoomed = false;
+
 	void Start () {
 		m_IndexActiveCamera = m_IndexMainCamera;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(m_IndexActiveCamera == m_IndexAimCamera){
+			float input = Input.GetAxis(In.AXIS_ZOOM);
+			if(input != 0)
+				m_IsZoomed = !m_IsZoomed;
+
+			if(m_IsZoomed)
+				ActiveCamera.camera.fieldOfView = Mathf.Lerp(ActiveCamera.camera.fieldOfView, m_ZoomFOV, Time.deltaTime * m_Smooth);
+			else
+				ActiveCamera.camera.fieldOfView = Mathf.Lerp(ActiveCamera.camera.fieldOfView, m_NormalFOV, Time.deltaTime * m_Smooth);
+
+		}
+
+
 		if( m_ToggleAimCamera ){
 			if ( Input.GetButtonUp(In.BUTTON_AIM) ){
 				if( m_IndexActiveCamera == m_IndexAimCamera )
