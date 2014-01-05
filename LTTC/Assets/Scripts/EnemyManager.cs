@@ -11,11 +11,15 @@ public class EnemyManager : MonoBehaviour {
 
 	private GameObject m_EnemySite;
 	private int m_GoalsLeft = 0;
+	private GeneralStuff m_Manager;
+	
 
 	void Start () {
 		Transform chosenLocation = m_PossibleEnemyLocations[Random.Range(0,m_PossibleEnemyLocations.Length)].transform;
 		m_EnemySite = Instantiate(m_EnemySitePrefab, chosenLocation.position, chosenLocation.rotation) as GameObject;
 		Destroy(m_PossibleEnemyLocations[0].transform.parent.gameObject);
+		m_Manager = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLER).GetComponent<GeneralStuff>();
+		
 
 		foreach(Destroyer d in m_EnemySite.GetComponentsInChildren<Destroyer>()){
 			if(d.m_IsGameGoal) m_GoalsLeft++;
@@ -31,12 +35,9 @@ public class EnemyManager : MonoBehaviour {
 		m_GoalsLeft--;
 		if(m_GoalsLeft==0){
 			Debug.Log("WIN STATE");
-			Invoke("OnWin", 3);
+			m_Manager.Win();
 		}
 	}
 
-	private void OnWin(){
-		EndMenu.EndState = EndMenu.EndMenuState.WIN;
-		Application.LoadLevel(Level.END_MENU);
-	}
+
 }

@@ -21,6 +21,7 @@ public class EnemyAim : MonoBehaviour {
 	}
 	
 	void Update () {
+		if(m_Target==null) return;
 		Vector3 targetLocation = m_Target.transform.position;// + new Vector3(0,1,0);
 		Vector3 vFromMeToTarget = targetLocation - transform.position;
 

@@ -3,7 +3,8 @@ using System.Collections;
 
 public class GameTimer : MonoBehaviour {
 	public float m_TimeInMinutes;
-
+	private GeneralStuff m_Manager;
+	
 	public int MinutesLeft {
 		get{
 			if(time <= 0) return 0;
@@ -21,13 +22,15 @@ public class GameTimer : MonoBehaviour {
 
 	void Start () {
 		time = m_TimeInMinutes * 60;
+		m_Manager = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLER).GetComponent<GeneralStuff>();
+		
 	}
 	
 	void Update () {
 		if(time > 0){
 			time -= Time.deltaTime;
 			if(time <= 0)
-				Invoke("OnLose", 3);
+				m_Manager.Lose(3);
 		}
 	}
 

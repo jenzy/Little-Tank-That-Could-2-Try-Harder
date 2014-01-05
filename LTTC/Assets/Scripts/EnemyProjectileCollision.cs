@@ -2,9 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 public class EnemyProjectileCollision : MonoBehaviour {
-	public Transform m_Explosion;
-	
-	//private Transform m_Transform;
+	public Transform m_ExplosionImpact;
+
 	private TerrainCraterMaker m_Terrain;
 	
 	void Start () {
@@ -13,31 +12,36 @@ public class EnemyProjectileCollision : MonoBehaviour {
 	
 	void OnCollisionEnter(Collision collision){
 		foreach(ContactPoint p in collision.contacts){
+			this.collider.enabled = false;
+
 			Collider otherCollider = p.otherCollider;
 			GameObject other = otherCollider.gameObject;
 			
 			Vector3 impactLocation = p.point;
-			Debug.Log("Enemy collision with tag " + other.tag);
+			Debug.Log("Enemy collision with " + other.name);
 			
 			if(otherCollider.CompareTag(Tags.TERRAIN)){
-				Instantiate(m_Explosion, impactLocation, Quaternion.identity);
 				m_Terrain.MakeCrater(impactLocation);
-			} 
-			else if(other.CompareTag(Tags.PLAYER)){
-				//Destroyer dest = other.GetComponent<Destroyer>();
-				//dest.Destroy();
-				Debug.Log("player hit");
 			}
 			else {
-				GameObject root = Tags.findParentWithTag(Tags.PLAYER, other.gameObject);
-				if(root != null){
-					//Destroyer dest = root.GetComponent<Destroyer>();
-					//dest.Destroy();
-					Debug.Log("player hit");
+				GameObject destructible = null;
+				if( other.CompareTag(Tags.PLAYER) ) 
+					destructible = other;
+				else {
+					GameObject root = Tags.findParentWithTag(Tags.PLAYER, other.gameObject);
+					if(root != null)
+						destructible = root;
+				}
+				
+				if(destructible != null){
+					Destroyer dest = destructible.GetComponent<Destroyer>();
+					dest.Hit();
 				}
 			}
-			
+
+			Instantiate(m_ExplosionImpact, impactLocation, Quaternion.identity);
 			Destroy(this.gameObject);
+			break;
 		}
 	}
 }

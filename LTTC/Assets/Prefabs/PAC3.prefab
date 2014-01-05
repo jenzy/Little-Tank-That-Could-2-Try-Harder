@@ -309,6 +309,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Explosion: {fileID: 400000, guid: e0a8f3202e78e8a42bdec33be319efb0, type: 2}
   m_IsGameGoal: 1
+  m_Health: 33
+  m_DefaultDamageTakenOnHit: 34
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

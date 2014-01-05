@@ -3127,6 +3127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Explosion: {fileID: 400000, guid: ec3df2891d2ccb844a0e7d2739030695, type: 2}
   m_IsGameGoal: 1
+  m_Health: 33
+  m_DefaultDamageTakenOnHit: 34
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3140,6 +3142,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Explosion: {fileID: 400000, guid: ec3df2891d2ccb844a0e7d2739030695, type: 2}
   m_IsGameGoal: 1
+  m_Health: 33
+  m_DefaultDamageTakenOnHit: 34
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3153,6 +3157,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Explosion: {fileID: 400000, guid: ec3df2891d2ccb844a0e7d2739030695, type: 2}
   m_IsGameGoal: 1
+  m_Health: 33
+  m_DefaultDamageTakenOnHit: 34
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3166,6 +3172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Explosion: {fileID: 400000, guid: e0a8f3202e78e8a42bdec33be319efb0, type: 2}
   m_IsGameGoal: 1
+  m_Health: 33
+  m_DefaultDamageTakenOnHit: 34
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3179,6 +3187,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Explosion: {fileID: 400000, guid: ec3df2891d2ccb844a0e7d2739030695, type: 2}
   m_IsGameGoal: 0
+  m_Health: 66
+  m_DefaultDamageTakenOnHit: 34
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3211,6 +3221,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Explosion: {fileID: 400000, guid: ec3df2891d2ccb844a0e7d2739030695, type: 2}
   m_IsGameGoal: 0
+  m_Health: 66
+  m_DefaultDamageTakenOnHit: 34
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1

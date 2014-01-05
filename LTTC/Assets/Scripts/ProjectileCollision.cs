@@ -43,28 +43,5 @@ public class ProjectileCollision : MonoBehaviour {
 			Destroy(this.gameObject);
 		}
 	}
-	/*
-	private GameObject findParentWithTag(string tagToFind, GameObject startingObject) {
-		Transform par = startingObject.transform.parent;
-		while (par != null) { 
-			if (par.CompareTag(tagToFind)) {
-				return par.gameObject as GameObject;
-			}
-			par = par.parent;
-		}
-		return null;
-	}*/
 
-	/*void OnTriggerEnter(Collider other) {
-		Debug.Log(other.tag);
-		Vector3 impactLocation = m_Transform.position;
-
-
-		Instantiate(m_Explosion, impactLocation, Quaternion.identity);
-
-		if(other.CompareTag(Tags.TERRAIN)){
-			m_Terrain.MakeCrater(impactLocation);
-		}
-		Destroy(this.gameObject);
-	}*/
 }

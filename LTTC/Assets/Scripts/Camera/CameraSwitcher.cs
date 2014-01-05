@@ -8,6 +8,7 @@ public class CameraSwitcher : MonoBehaviour {
 	public bool m_ToggleAimCamera = true;
 
 	private int m_IndexActiveCamera;
+	private bool m_Ignore = false;
 
 	public GameObject ActiveCamera {
 		get { return m_Cameras[m_IndexActiveCamera]; }
@@ -28,6 +29,7 @@ public class CameraSwitcher : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(m_Ignore) return;
 		if(m_IndexActiveCamera == m_IndexAimCamera){
 			float input = Input.GetAxis(In.AXIS_ZOOM);
 			if(input != 0)
@@ -75,5 +77,13 @@ public class CameraSwitcher : MonoBehaviour {
 			}
 		}
 		m_IndexActiveCamera = index;
+	}
+
+	public void SetupDeadCamera(){
+		if(m_IndexActiveCamera != m_IndexMainCamera)
+			switchToCamera(m_IndexMainCamera);
+		ActiveCamera.GetComponent<AudioListener>().enabled = true;
+		ActiveCameraGroup.parent = null;
+		m_Ignore = true;
 	}
 }
