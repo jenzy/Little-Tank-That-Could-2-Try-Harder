@@ -676,6 +676,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CraterTexture: {fileID: 2800000, guid: 980ccffc7453a864e96e91e0d5bd69f5, type: 3}
+  m_ExplosionWithTerrain: {fileID: 400000, guid: 2a6951ec14b27ed4da27d13818dbebd2,
+    type: 2}
 --- !u!114 &661882710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1873,6 +1875,9 @@ MonoBehaviour:
   m_IndexMainCamera: 0
   m_IndexAimCamera: 1
   m_ToggleAimCamera: 1
+  m_ZoomFOV: 20
+  m_NormalFOV: 60
+  m_Smooth: 5
 --- !u!114 &2029224393
 MonoBehaviour:
   m_ObjectHideFlags: 0

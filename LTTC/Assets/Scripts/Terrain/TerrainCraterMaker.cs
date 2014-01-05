@@ -3,6 +3,7 @@ using System.Collections;
 
 public class TerrainCraterMaker : MonoBehaviour {
 	public Texture2D m_CraterTexture;
+	public Transform m_ExplosionWithTerrain;
 
 	private TerrainData m_TerrainData;
 	private float[,] m_SavedTerrainData;
@@ -28,7 +29,8 @@ public class TerrainCraterMaker : MonoBehaviour {
 	}
 
 	public void MakeCrater( Vector3 impactWorldCoordinates ){
-	Vector3 impact = impactWorldCoordinates - Terrain.activeTerrain.transform.position;
+		Instantiate(m_ExplosionWithTerrain, impactWorldCoordinates, Quaternion.identity);
+		Vector3 impact = impactWorldCoordinates - Terrain.activeTerrain.transform.position;
 
 		int x = (int)Mathf.Lerp(0, m_HeightmapWidth, Mathf.InverseLerp(0, m_TerrainData.size.x, impact.x));
 		int z = (int)Mathf.Lerp(0, m_HeightmapHeight, Mathf.InverseLerp(0, m_TerrainData.size.z, impact.z));

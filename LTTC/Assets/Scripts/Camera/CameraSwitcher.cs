@@ -37,14 +37,16 @@ public class CameraSwitcher : MonoBehaviour {
 				ActiveCamera.camera.fieldOfView = Mathf.Lerp(ActiveCamera.camera.fieldOfView, m_ZoomFOV, Time.deltaTime * m_Smooth);
 			else
 				ActiveCamera.camera.fieldOfView = Mathf.Lerp(ActiveCamera.camera.fieldOfView, m_NormalFOV, Time.deltaTime * m_Smooth);
-
 		}
 
 
 		if( m_ToggleAimCamera ){
 			if ( Input.GetButtonUp(In.BUTTON_AIM) ){
-				if( m_IndexActiveCamera == m_IndexAimCamera )
+				if( m_IndexActiveCamera == m_IndexAimCamera ){
+					m_IsZoomed = false;
+					ActiveCamera.camera.fieldOfView = m_NormalFOV;
 					switchToCamera(m_IndexMainCamera);
+				}
 				else
 					switchToCamera(m_IndexAimCamera);
 			}
@@ -52,8 +54,11 @@ public class CameraSwitcher : MonoBehaviour {
 		else {
 			if( Input.GetButtonDown(In.BUTTON_AIM))
 				switchToCamera(m_IndexAimCamera);
-			else if( Input.GetButtonUp(In.BUTTON_AIM))
+			else if( Input.GetButtonUp(In.BUTTON_AIM)){
+				m_IsZoomed = false;
+				ActiveCamera.camera.fieldOfView = m_NormalFOV;
 				switchToCamera(m_IndexMainCamera);
+			}
 		}
 	}
 

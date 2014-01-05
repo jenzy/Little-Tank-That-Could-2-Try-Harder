@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class ProjectileCollision : MonoBehaviour {
-	public Transform m_Explosion;
+	public Transform m_ExplosionImpact;
 
 	//private Transform m_Transform;
 	private TerrainCraterMaker m_Terrain;
@@ -18,24 +18,28 @@ public class ProjectileCollision : MonoBehaviour {
 			GameObject other = otherCollider.gameObject;
 
 			Vector3 impactLocation = p.point;
-			Debug.Log("Collision with tag " + other.tag);
+			Debug.Log("Collision with " + other.name);
 			
 			if(otherCollider.CompareTag(Tags.TERRAIN)){
-				Instantiate(m_Explosion, impactLocation, Quaternion.identity);
 				m_Terrain.MakeCrater(impactLocation);
 			} 
-			else if(other.CompareTag(Tags.DESTRUCTIBLE)){
-				Destroyer dest = other.GetComponent<Destroyer>();
-				dest.Destroy();
-			}
 			else {
-				GameObject root = Tags.findParentWithTag(Tags.DESTRUCTIBLE, other.gameObject);
-				if(root != null){
-					Destroyer dest = root.GetComponent<Destroyer>();
-					dest.Destroy();
+				GameObject destructible = null;
+				if( other.CompareTag(Tags.DESTRUCTIBLE) ) 
+					destructible = other;
+				else {
+					GameObject root = Tags.findParentWithTag(Tags.DESTRUCTIBLE, other.gameObject);
+					if(root != null)
+						destructible = root;
+				}
+
+				if(destructible != null){
+					Destroyer dest = destructible.GetComponent<Destroyer>();
+					dest.Hit();
 				}
 			}
 
+			Instantiate(m_ExplosionImpact, impactLocation, Quaternion.identity);
 			Destroy(this.gameObject);
 		}
 	}
