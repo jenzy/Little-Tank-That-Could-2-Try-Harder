@@ -569,9 +569,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa45c185b1e25544bbd5adf17f843b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guiSkin: {fileID: 0}
+  guiSkin: {fileID: 11400000, guid: ebec83ecb0cdf9344a6faff09fdf559f, type: 2}
   LOGO: {fileID: 0}
-  levelToLoad: level1
+  AboutTextLines: []
 --- !u!81 &1510535010
 AudioListener:
   m_ObjectHideFlags: 0

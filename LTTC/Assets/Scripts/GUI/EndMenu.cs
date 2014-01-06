@@ -8,6 +8,7 @@ public class EndMenu : MonoBehaviour {
 	public GameObject m_MainText;
 	public GameObject m_SubText;
 	public GameObject m_LoseExplosion;
+	public GameObject m_Ognjemet;
 	public GameObject m_Camera;
 
 	public enum EndMenuState {WIN, LOSE}
@@ -15,13 +16,14 @@ public class EndMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		EndState = EndMenuState.LOSE;
 
 		switch(EndState){
 		case EndMenuState.WIN:
+			m_Camera.transform.Rotate(-17, 0,0);
 			m_MainText.guiText.text = "CONGRATULATIONS!";
 			m_SubText.guiText.text = "You have successfully foiled the enemy's plan!";
-			
+			m_Ognjemet.particleSystem.Play();
+
 			break;
 		case EndMenuState.LOSE:
 			m_MainText.guiText.text = "GAME OVER!";

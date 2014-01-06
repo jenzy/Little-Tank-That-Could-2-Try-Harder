@@ -7,9 +7,18 @@ public class MainMenu : MonoBehaviour {
 
 	public GUISkin guiSkin;
 	public Texture2D LOGO;
-	//public string[] AboutTextLines = new string[0];
 	
-	//private string MessageDisplayOnAbout = "About \n ";
+	public string[] AboutTextLines = new string[0];
+	private string MessageDisplayOnAbout = "About\n\n\n\n\n" +
+		"Little Tank That Could 2: Try Harder\n\n\n" +
+		"Authors:\n\n" +
+		"Jani Bevk\n\n" +
+		"Jernej Henigman\n\n\n" +
+		"Computer Graphics and Game Technology 2013/14\n\n" +
+		"Faculty of Computer and Information Science\n\n" +
+		"University of Ljubljana\n\n\n\n\n" +
+		"Press Esc To Go Back";
+
 	private Menu current;
 	private float volume = 1.0f;
 	private Rect MainWindowRect = new Rect((Screen.width / 2) - 100, Screen.height-220, 200, 200);
@@ -36,10 +45,6 @@ public class MainMenu : MonoBehaviour {
 	
 	private void Start(){
 		Screen.showCursor = true;
-		/*for (int x = 0; x < AboutTextLines.Length;x++ ){
-			MessageDisplayOnAbout += AboutTextLines[x] + " \n ";
-		}
-		MessageDisplayOnAbout += "Press Esc To Go Back";*/
 	}
 	
 	private void OnGUI(){
@@ -72,12 +77,10 @@ public class MainMenu : MonoBehaviour {
 				current = Menu.OPTIONS;
 			GUILayout.EndHorizontal();
 			break;
-		}
-		/*
-		else if (clicked == "about")
-		{
+		case Menu.ABOUT:
 			GUI.Box(new Rect (0,0,Screen.width,Screen.height), MessageDisplayOnAbout);
-		}*/
+			break;
+		}
 	}
 
 	private void showDifficulty(int id){
@@ -111,13 +114,13 @@ public class MainMenu : MonoBehaviour {
 		if (GUILayout.Button("Play Game"))
 			Application.LoadLevel(levelLoadStrings[level]);
 
-		GUILayout.Space(30);
+		GUILayout.Space(20);
 		if (GUILayout.Button("Options"))
 			current = Menu.OPTIONS;
 		if (GUILayout.Button("About"))
 			current = Menu.ABOUT;
 
-		GUILayout.Space(20);
+		GUILayout.Space(15);
 		if (GUILayout.Button("Quit Game"))
 			Application.Quit();
 	}
