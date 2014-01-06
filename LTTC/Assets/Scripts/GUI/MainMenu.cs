@@ -40,7 +40,7 @@ public class MainMenu : MonoBehaviour {
 	// Level select
 	private int level = 0;
 	private string[] levelDisplayStrings = { "Grassland", "Desert" };
-	private string[] levelLoadStrings = { Level.LEVEL1, Level.LEVEL1 };
+	private string[] levelLoadStrings = { Level.LEVEL1, Level.LEVEL2 };
 	private Rect LevelWindowRect = new Rect(Screen.width-220, Screen.height-120, 200, 100);
 	
 	private void Start(){
