@@ -12,9 +12,12 @@ public class TerrainCraterMaker : MonoBehaviour {
 	private int m_HeightmapWidth;
 	private int m_HeightmapHeight;
 
+	private Transform m_Transform;
+
 	private TerrainTextureChanger m_texChanger;
 
 	void Start () {
+		m_Transform = Terrain.activeTerrain.transform;
 		m_TerrainData = Terrain.activeTerrain.terrainData;
 		m_HeightmapWidth = m_TerrainData.heightmapWidth;
 		m_HeightmapHeight = m_TerrainData.heightmapHeight;

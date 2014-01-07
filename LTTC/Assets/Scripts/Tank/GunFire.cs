@@ -13,7 +13,8 @@ public class GunFire : MonoBehaviour {
 
 	void Start () {
 		//m_player = GameObject.FindGameObjectWithTag(Tags.PLAYER);
-		TankGun = new Gun(30, 5);
+		int ammo = MainMenu.ChosenDifficulty == MainMenu.Difficulty.EASY ? 50 : 25;
+		TankGun = new Gun(ammo, 5);
 	}
 	
 	void Update () {

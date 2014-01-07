@@ -24,6 +24,9 @@ public class Destroyer : MonoBehaviour {
 		m_Manager = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLER).GetComponent<GeneralStuff>();
 		craterMaker = Terrain.activeTerrain.GetComponent<TerrainCraterMaker>();
 		m_CameraSwitcher = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLER).GetComponent<CameraSwitcher>();
+
+		if(MainMenu.ChosenDifficulty == MainMenu.Difficulty.NORMAL)
+			m_DefaultDamageTakenOnHit = 51;
 	}
 
 	public void Hit(){
@@ -43,7 +46,8 @@ public class Destroyer : MonoBehaviour {
 			if(m_IsGameGoal)
 				m_EnemyManager.GoalDestroyed();
 			craterMaker.MakeCrater(this.transform.position);
-			Instantiate(m_Explosion, this.transform.position, Quaternion.identity);
+			if(m_Explosion != null)
+				Instantiate(m_Explosion, this.transform.position, Quaternion.identity);
 			Destroy(this.gameObject, 0.1f);
 		}
 	}

@@ -16,7 +16,7 @@ public class EndMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+EndState = EndMenuState.LOSE;
 		switch(EndState){
 		case EndMenuState.WIN:
 			m_Camera.transform.Rotate(-17, 0,0);
