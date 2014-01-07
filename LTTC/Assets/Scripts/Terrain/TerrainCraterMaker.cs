@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class TerrainCraterMaker : MonoBehaviour {
 	public Texture2D m_CraterTexture;
@@ -15,6 +16,7 @@ public class TerrainCraterMaker : MonoBehaviour {
 	private Transform m_Transform;
 
 	private TerrainTextureChanger m_texChanger;
+	private List<GameObject> m_Trees;
 
 	void Start () {
 		m_Transform = Terrain.activeTerrain.transform;
@@ -25,6 +27,8 @@ public class TerrainCraterMaker : MonoBehaviour {
 		m_CraterData = m_CraterTexture.GetPixels();
 
 		m_texChanger = Terrain.activeTerrain.GetComponent<TerrainTextureChanger>();
+
+		m_Trees = new List<GameObject>(GameObject.FindGameObjectsWithTag(Tags.TREE));
 	}
 	
 	void OnApplicationQuit () {
@@ -53,5 +57,14 @@ public class TerrainCraterMaker : MonoBehaviour {
 		}
 		
 		m_TerrainData.SetHeights((int)(x-m_CraterTexture.width/2), (int)(z-m_CraterTexture.height/2), areaT);
+
+		for(int i=0; i<m_Trees.Count; i++){
+			GameObject tree = m_Trees[i];
+			Debug.Log(Vector3.Distance(impactWorldCoordinates, tree.transform.position));
+			if(Vector3.Distance(impactWorldCoordinates, tree.transform.position) < 13){
+				Destroy(tree);
+				m_Trees.RemoveAt(i);
+			}
+		}
 	}
 }

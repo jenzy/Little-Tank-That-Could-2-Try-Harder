@@ -1200,7 +1200,7 @@ GameObject:
   - 114: {fileID: 1197122048}
   m_Layer: 0
   m_Name: Tree
-  m_TagString: Destructible
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1764,7 +1764,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: a67ef74b2e264e24d9546dfe5124fd84, type: 2}
       propertyPath: m_TagString
-      value: Destructible
+      value: Tree
       objectReference: {fileID: 0}
     - target: {fileID: 13600000, guid: a67ef74b2e264e24d9546dfe5124fd84, type: 2}
       propertyPath: m_Radius
