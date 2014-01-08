@@ -3206,7 +3206,7 @@ MonoBehaviour:
   m_Projectile: {fileID: 100000, guid: 72128da2f447e2142ac737a70f009530, type: 2}
   m_InitialForce: 10000
   m_MuzzleFlash: {fileID: 100002, guid: b18cadd60c0d1b04aaad31e7200914d8, type: 2}
-  m_Range: 100
+  m_Range: 120
   m_FireChance: .00499999989
 --- !u!114 &11400012
 MonoBehaviour:
@@ -3240,7 +3240,7 @@ MonoBehaviour:
   m_Projectile: {fileID: 100000, guid: 72128da2f447e2142ac737a70f009530, type: 2}
   m_InitialForce: 10000
   m_MuzzleFlash: {fileID: 100002, guid: b18cadd60c0d1b04aaad31e7200914d8, type: 2}
-  m_Range: 100
+  m_Range: 120
   m_FireChance: .00499999989
 --- !u!1001 &100100000
 Prefab:

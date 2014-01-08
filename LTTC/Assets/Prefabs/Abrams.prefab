@@ -272,7 +272,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: .530380309, z: 0, w: -.847759902}
-  m_LocalPosition: {x: 181.245514, y: 166.652573, z: 478.46759}
+  m_LocalPosition: {x: -646.918335, y: 235.696991, z: 630.449707}
   m_LocalScale: {x: .178025782, y: .178025782, z: .178025812}
   m_Children:
   - {fileID: 400020}
@@ -806,7 +806,7 @@ MonoBehaviour:
   m_Projectile: {fileID: 100000, guid: 72128da2f447e2142ac737a70f009530, type: 2}
   m_InitialForce: 10000
   m_MuzzleFlash: {fileID: 100002, guid: b18cadd60c0d1b04aaad31e7200914d8, type: 2}
-  m_Range: 100
+  m_Range: 150
   m_FireChance: .0500000007
 --- !u!1001 &100100000
 Prefab:

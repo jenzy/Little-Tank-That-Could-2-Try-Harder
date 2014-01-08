@@ -23,6 +23,9 @@ public class ProjectileCollision : MonoBehaviour {
 			if(otherCollider.CompareTag(Tags.TERRAIN)){
 				m_Terrain.MakeCrater(impactLocation);
 			} 
+			else if(otherCollider.CompareTag(Tags.TREE)){
+				Destroy(other.gameObject);
+			} 
 			else {
 				GameObject destructible = null;
 				if( other.CompareTag(Tags.DESTRUCTIBLE) ) 
