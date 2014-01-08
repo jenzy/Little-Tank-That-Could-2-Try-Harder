@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Destroyer : MonoBehaviour {
 	public Transform m_Explosion;
+	public GameObject m_Smoke;
 	public bool m_IsGameGoal = false;
 	public int m_Health = 100;
 	public int m_DefaultDamageTakenOnHit = 34;
@@ -36,6 +37,10 @@ public class Destroyer : MonoBehaviour {
 	public void Hit(int damage){
 		m_Health -= damage;
 		Debug.Log(string.Format("{0} {1} was hit ({2} dmg). Health left: {3}", (m_IsGameGoal ? "[GOAL] " : "" ), this.name, damage, m_Health));
+
+		if(m_Health<35 && m_Smoke != null)
+			m_Smoke.particleEmitter.emit = true;
+
 
 		if(m_Health <= 0){
 			if(this.CompareTag(Tags.PLAYER)){

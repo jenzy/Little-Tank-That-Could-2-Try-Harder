@@ -13,13 +13,10 @@ public class TerrainCraterMaker : MonoBehaviour {
 	private int m_HeightmapWidth;
 	private int m_HeightmapHeight;
 
-	private Transform m_Transform;
-
 	private TerrainTextureChanger m_texChanger;
 	private List<GameObject> m_Trees;
 
 	void Start () {
-		m_Transform = Terrain.activeTerrain.transform;
 		m_TerrainData = Terrain.activeTerrain.terrainData;
 		m_HeightmapWidth = m_TerrainData.heightmapWidth;
 		m_HeightmapHeight = m_TerrainData.heightmapHeight;
@@ -58,9 +55,10 @@ public class TerrainCraterMaker : MonoBehaviour {
 		
 		m_TerrainData.SetHeights((int)(x-m_CraterTexture.width/2), (int)(z-m_CraterTexture.height/2), areaT);
 
+		// Destroy trees
 		for(int i=0; i<m_Trees.Count; i++){
 			GameObject tree = m_Trees[i];
-			Debug.Log(Vector3.Distance(impactWorldCoordinates, tree.transform.position));
+			//Debug.Log(Vector3.Distance(impactWorldCoordinates, tree.transform.position));
 			if(Vector3.Distance(impactWorldCoordinates, tree.transform.position) < 13){
 				Destroy(tree);
 				m_Trees.RemoveAt(i);
