@@ -3,7 +3,7 @@ Little Tank That Could 2: Try Harder
 
 Little Tank That Could 2 is a game I made for my Computer Graphics and Game Technology class. It is a "port" to the Unity Game Engine.
 
-![Screenshot](https://bitbucket.org/zero-slo/little-tank-that-could-2-try-harder/raw/master/screen.png)
+![Screenshot](screen.png)
 
 Little Tank That Could 2 is an arcade game in which the player controls a tank. The player must find and destroy all enemies before the timer runs out. This time, the enemy tanks fight back!
 
@@ -19,4 +19,4 @@ Little Tank That Could 2 is an arcade game in which the player controls a tank. 
 Jani Bevk   
 Computer Graphics and Game Technology class 2013/14   
 Faculty of Computer and Information Science   
-University of Ljubljana   
+University of Ljubljana
