@@ -8,9 +8,9 @@ Little Tank That Could 2 is a game I made for my Computer Graphics and Game Tech
 Little Tank That Could 2 is an arcade game in which the player controls a tank. The player must find and destroy all enemies before the timer runs out. This time, the enemy tanks fight back!
 
 [Gameplay video](http://www.youtube.com/watch?v=O-CmcrJo8-I)    
-[Downloads](https://bitbucket.org/zero-slo/little-tank-that-could-2-try-harder/downloads)   
+[Downloads](../../downloads)   
 
-[Little Tank That Could 1](https://bitbucket.org/zero-slo/little-tank-that-could), the original game  
+[Little Tank That Could 1](https://bitbucket.org/jenzy/little-tank-that-could), the original game  
 [Other games from the CG 2013/14 class](https://www.youtube.com/watch?v=NTk769wBu9Q)       
 
 [Unity](http://unity3d.com/)
