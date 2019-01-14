@@ -1,6 +1,6 @@
 # Little Tank That Could 2: Try Harder
 
-Little Tank That Could 2 was developed as a part of a Computer Graphics and Game Technology class. It is a "port" of the [original game](https://github.com/jenzy/Little-Tank-That-Could) the Unity Game Engine.
+Little Tank That Could 2 was developed as a part of a Computer Graphics and Game Technology class. It is a "port" of the [original game](https://github.com/jenzy/Little-Tank-That-Could) to the Unity Game Engine.
 
 ![Screenshot](screen.png)
 
